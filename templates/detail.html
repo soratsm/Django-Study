@@ -1,0 +1,17 @@
+g{% extends 'base.html' %}
+
+{% block header %}
+    detail
+{% endblock header %}
+{% block content %}
+    <div class="card mb-3" style="width: 18rem; background-color :cadetblue;width: 18rem;">
+        <img src="{{ object.sns_image.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ object.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">投稿者：{{ object.author }}</h6>
+            <p class="card-text">{{ object.content }}</p>
+            <a href="#" class="btn btn-success">いいねする</a>
+            <a href="#" class="btn btn-info">既読にする</a>
+        </div>
+    </div>
+{% endblock content %}

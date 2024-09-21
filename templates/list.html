@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    List
+{% endblock header %}
+{% block content %}
+    <body>
+    {% for item in object_list %}
+        <div class="card mb-3" style="width: 18rem; background-color :cadetblue;width: 18rem;">
+            <img src="{{ item.sns_image.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><a href="{% url 'detail' item.pk %}">{{ item.title }}</a></h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">投稿者：{{ item.author }}</h6>
+                <p class="card-text">{{ item.content }}</p>
+                <a href="#" class="btn btn-success">いいね</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    {% endfor %}
+    </body>
+{% endblock content %}

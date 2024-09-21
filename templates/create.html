@@ -1,0 +1,14 @@
+g{% extends 'base.html' %}
+
+{% block header %}
+    Create View
+{% endblock header %}
+{% block content %}
+    <form action='' method='POST'>
+        {#as_table等々ありviewsのfieldsと連動#}
+        {{ form.as_p }}
+        {#クロスサイトスクリプティング用に下記を入れる#}
+        {% csrf_token %}
+        <input type='submit' value='create'>
+    </form>
+{% endblock content %}
